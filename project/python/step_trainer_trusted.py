@@ -36,7 +36,7 @@ ChangeSchema_node1776725497485 = ApplyMapping.apply(frame=AWSGlueDataCatalog_nod
 Join_node1776724808819 = Join.apply(frame1=ChangeSchema_node1776725497485, frame2=ChangeSchema_node1776725524014, keys1=["serialnumber"], keys2=["serialnumber"], transformation_ctx="Join_node1776724808819")
 
 # Script generated for node Drop Fields
-DropFields_node1776724911497 = DropFields.apply(frame=Join_node1776724808819, paths=["`.serialnumber`", "distancefromobject", "sensorreadingtime"], transformation_ctx="DropFields_node1776724911497")
+DropFields_node1776724911497 = DropFields.apply(frame=Join_node1776724808819, paths=["phone", "lastupdatedate", "email", "sharewithfriendsasofdate", "customername", "registrationdate", "sharewithresearchasofdate", "sharewithpublicasofdate", "birthday", "`.serialnumber`"], transformation_ctx="DropFields_node1776724911497")
 
 # Script generated for node Amazon S3
 EvaluateDataQuality().process_rows(frame=DropFields_node1776724911497, ruleset=DEFAULT_DATA_QUALITY_RULESET, publishing_options={"dataQualityEvaluationContext": "EvaluateDataQuality_node1776724254062", "enableDataQualityResultsPublishing": True}, additional_options={"dataQualityResultsPublishing.strategy": "BEST_EFFORT", "observations.scope": "ALL"})
